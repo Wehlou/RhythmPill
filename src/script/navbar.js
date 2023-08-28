@@ -1,5 +1,7 @@
 const lgLinks = document.getElementById("lg-links");
 const smLinks = document.getElementById("sm-links");
+
+// Open and close buttons
 const open = document.getElementById("open");
 const close = document.getElementById("close");
 
@@ -10,8 +12,8 @@ window.addEventListener('resize', () => updateState());
 open.addEventListener('click', () => toggleFold());
 close.addEventListener('click', () => toggleFold());
 
+// Mobile view
 function updateState() {
-
     if(window.innerWidth <= 1024) {
         lgLinks.style.display = "none";
 
@@ -20,7 +22,6 @@ function updateState() {
         } else {
             open.style.display = "block";
         }
-        
     } else {
         lgLinks.style.display = "flex";
         smLinks.style.display = "none";
@@ -30,7 +31,6 @@ function updateState() {
 }
 
 function toggleFold() {
-
     if(smLinks.style.display != "flex") {
         open.style.display = "none";
         close.style.display = "block";
